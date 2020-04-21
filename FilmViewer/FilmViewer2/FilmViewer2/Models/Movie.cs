@@ -8,6 +8,7 @@ using Microsoft.Ajax.Utilities;
 
 namespace FilmViewer2.Models
 {
+    //Movie object class. 
     public class Movie
     {
         public int id { get; set; }
@@ -16,8 +17,6 @@ namespace FilmViewer2.Models
         public string description { get; set; }
         public double rating { get; set; }
         public byte categoryId { get; set; }
-        //public string genre { get; set; }
-
     }
     
 }

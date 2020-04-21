@@ -1,23 +1,13 @@
-<h1>Tere tulemast filmimaailma</h1>
+<!-- This markup renders the components for searching and filtering the desided results.
+Ideally I would have liked to make the checkboxes separate components, because the input 
+for them should come from the backend (how many, the names ect). I did not find a satisfying
+implementation for this with the time given. The checkbox components are taken from Angular material 
+documentation. -->
 
-<!-- <form onSubmit="return false;">
-    <div class="form-group">
-      <label for="Searchbar"></label>
-      
-    </div>     
-  </form> -->
-  <!-- <form class="example-form"> -->
-    <!-- <mat-form-field class="example-full-width">
-      <input type="text" placeholder="e.g Silence of the Lambs" id="Searchbar" (keyup)="onEnterPressed()" (keyup.backspace)="onEnterPressed()" [(ngModel)]='searchName'  [matAutocomplete]="auto">
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let movie of movies" [value]="movie.title">
-          {{movie.title}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field> -->
-  
+
+<h1>Welcome to FilmViewer</h1>  
   <div class="form-group">
-    <input [(ngModel)]="searchName" (keyup)="onEnterPressed()" class="form-control" id="Searchbar" placeholder="e.g Silence of the Lambs"/>
+    <input [(ngModel)]="searchName" (keyup)="onKeyPressed()" class="form-control" id="Searchbar" placeholder="e.g Silence of the Lambs"/>
   </div>
   <section class="example-section">
     <mat-checkbox class ="example-margin" (change)="onChecking(1)" id="Movie1" >
@@ -39,38 +29,3 @@
       {{categories[6]}}
     </mat-checkbox>
   </section>
-<!-- </form> -->
-
-  <!-- <button type="submit" class="btn btn-primary">Submit</button>  -->
-
-
-
-  <!-- <div class="form-check form-check-inline">
-    <input type="checkbox" (change)="onChecking(2)" class="form-check-input" id="Movie2" >
-    <label class="form-check-label" for="Movie2">
-      {{categories[2]}}
-    </label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input type="checkbox" (change)="onChecking(3)" class="form-check-input" id="Movie3" >
-    <label class="form-check-label" for="Movie3">
-      {{categories[3]}}
-    </label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input type="checkbox" (change)="onChecking(4)" class="form-check-input" id="Movie4" >
-    <label class="form-check-label" for="Movie4">
-      {{categories[4]}}
-    </label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input type="checkbox" (change)="onChecking(5)" class="form-check-input" id="Movie5" >
-    <label class="form-check-label" for="Movie5">
-      {{categories[5]}}
-    </label>
-  </div>
-  <div class="form-check form-check-inline">
-    <input type="checkbox" (change)="onChecking(6)" class="form-check-input" id="Movie6" >
-    <label class="form-check-label" for="Movie6">
-      {{categories[6]}}
-    </label> -->

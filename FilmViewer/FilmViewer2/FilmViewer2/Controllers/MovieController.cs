@@ -18,12 +18,17 @@ namespace FilmViewer2.Controllers
             return Json(movies, JsonRequestBehavior.AllowGet);
         }
 
-    public JsonResult GetMoviesByID(int categoryId)
+    public JsonResult GetMoviesByCategoryId(int categoryId)
     {
-        var movies = service.getMoviesListById(categoryId);
+        var movies = service.getMoviesListByCategoryId(categoryId);
         return Json(movies, JsonRequestBehavior.AllowGet);
     }
 
-    //TODO GetMoviesById korda.
+    public JsonResult GetMovieById(int movieId)
+    {
+        var movie = service.getMovieDetails(movieId);
+        return Json(movie, JsonRequestBehavior.AllowGet);
+    }
+
     }
 }

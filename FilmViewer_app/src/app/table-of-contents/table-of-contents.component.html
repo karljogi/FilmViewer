@@ -1,3 +1,11 @@
+<!-- This component uses the input from the user to render the results on the screen.
+Perhaps not the best implementation as there is a lot of repetitive code. Also this 
+implementation only works if the whole dataset is available to the frontend. A better
+implementation would be if for both search/filtering methods the application would make
+requests to the backend. But this works, probably also for bigger datasets and it is very fast.
+The implementation details are explained in the app.component file. -->
+
+
 <table class="table">
     <thead>
         <tr>
@@ -18,10 +26,10 @@
         </tbody>
         <tbody *ngSwitchCase= "'searchBar'">
                 <tr  *ngFor="let p of movies ">
-                    <td [hidden]="!p.title.includes(search)">{{ p.title }}</td>
-                    <td [hidden]="!p.title.includes(search)">{{ p.year }}</td>
-                    <td [hidden]="!p.title.includes(search)">{{ p.rating }}</td>
-                    <td [hidden]="!p.title.includes(search)">{{ categories[p.categoryId] }}</td> 
+                    <td [hidden]="!p.title.toLowerCase().includes(search.toLowerCase())">{{ p.title }}</td>
+                    <td [hidden]="!p.title.toLowerCase().includes(search.toLowerCase())">{{ p.year }}</td>
+                    <td [hidden]="!p.title.toLowerCase().includes(search.toLowerCase())">{{ p.rating }}</td>
+                    <td [hidden]="!p.title.toLowerCase().includes(search.toLowerCase())">{{ categories[p.categoryId] }}</td> 
             </tr>
         </tbody>
         <tbody *ngSwitchCase= "'checkBox'">
@@ -34,33 +42,3 @@
         </tbody>
     </ng-container>
 </table>
-
-<!-- <td>{{ p.description }}</td> -->
-<!-- <td>{{ p.description }}</td> -->
-
-    <!-- <tbody *ngIf="search.length == 0; else searchBar">
-
-<ng-container [ngSwitch]= "viewMode" >
-    <div *ngSwitchCase= "'full'">FULL</div>
-    <div *ngSwitchCase= "'bothChoices'">BOTH</div>
-    <div *ngSwitchCase= "'searchBar'">SEARCHBAR</div>
-    <div *ngSwitchCase= "'checkBox'">CHECKBOX</div>
-</ng-container> -->
-
-        <!-- <tr *ngFor="let p of movies ">
-            <td>{{ p.title }}</td>
-            <td>{{ p.year }}</td>
-            <td>{{ p.description }}</td>
-            <td>{{ p.rating }}</td>
-            <td>{{ p.categoryId }}</td>
-        </tr>
-    </tbody>
-    <ng-template #searchBar>
-        <tr *ngFor="let p of movies ">
-            <td [hidden]="search != p.title">{{ p.title }}</td>
-            <td [hidden]="search != p.title">{{ p.year }}</td>
-            <td>{{ p.description }}</td> 
-            <td [hidden]="search != p.title">{{ p.rating }}</td>
-            <td [hidden]="search != p.title">{{ p.categoryId }}</td> 
-        </tr> 
-    </ng-template>  -->

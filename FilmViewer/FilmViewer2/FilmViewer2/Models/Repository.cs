@@ -5,6 +5,8 @@ using System.Web;
 
 namespace FilmViewer2.Models
 {
+
+    //Repository class which holds the hardcoded list of movies and provides two methods for returning the full MoviesList object and a single Movie object by Id. 
     public class Repository
     {
 
@@ -171,7 +173,6 @@ namespace FilmViewer2.Models
 
         public Movie getMovieByID(int id)
         {
-             //List<Movie> fullList = getMovies();
 
             foreach (Movie item in FullMovieList)
             {
@@ -186,5 +187,3 @@ namespace FilmViewer2.Models
 
     }
 }
-//Crime = 1, Adventure = 2, Action = 3, Sci-Fi = 4, History = 5, Animation = 6
-

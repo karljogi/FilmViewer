@@ -9,7 +9,6 @@ import { SearchFormComponent } from './search-form/search-form.component';
 import { TableOfContentsComponent } from './table-of-contents/table-of-contents.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TableOfContentsService } from './table-of-contents.service';
-import { CheckboxComponent } from './checkbox/checkbox.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -19,7 +18,6 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     AppComponent,
     SearchFormComponent,
     TableOfContentsComponent,
-    CheckboxComponent
   ],
   imports: [
     BrowserModule,
