@@ -6,7 +6,7 @@ using System.Web;
 
 namespace FilmViewer2.Models
 {
-    //MovieService class provides 3 methods for retrieving movies 
+    //MovieService class provides 3 methods for retrieving movies: full list, by movie ID and by CategoryID.
     public class MovieService
     {
         Repository repo = new Repository();
@@ -34,9 +34,8 @@ namespace FilmViewer2.Models
 
         public MoviesList getMoviesListByCategoryId(int categoryId)
         {
-            MoviesList filmsList = this.repo.getFullMoviesList();
             MoviesList movieList = new MoviesList();
-            foreach (var Movie in filmsList)
+            foreach (var Movie in this.repo.getFullMoviesList())
             {
                 if (categoryId == Movie.categoryId)
                 {

@@ -6,10 +6,12 @@ using System.Web;
 namespace FilmViewer2.Models
 {
 
-    //Repository class which holds the hardcoded list of movies and provides two methods for returning the full MoviesList object and a single Movie object by Id. 
+    //Repository class which holds the hardcoded list of movies and provides three methods for returning the full MoviesList object,
+    // a single Movie object by Id and movies by category. 
+    // The list of movies is the top 15 retrieved from https://www.imdb.com/list/ls000060680/
+
     public class Repository
     {
-
 
         private MoviesList FullMovieList = new MoviesList()
         {
@@ -182,8 +184,6 @@ namespace FilmViewer2.Models
 
             return null;
         }
-
-
 
     }
 }

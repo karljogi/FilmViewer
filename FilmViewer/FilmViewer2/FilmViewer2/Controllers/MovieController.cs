@@ -4,7 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FilmViewer2.Models;
-using Microsoft.Ajax.Utilities;
+
+
+// Provides an API to getting MovieList or Movie.
+// In order to retrieve a full movie list a http request should be made: https://localhost:44384/Movie/GetMovieData
+// In order to retrieve a list of movies based on category, a http request @ : https://localhost:44384/Movie/GetMoviesByID?categoryId={categoryID}
+// In order to retrieve a Movie object by id a http request @ : https://localhost:44384/Movie/GetMovieById?movieId={movieId}
 
 namespace FilmViewer2.Controllers
 {
