@@ -1,0 +1,76 @@
+<h1>Tere tulemast filmimaailma</h1>
+
+<!-- <form onSubmit="return false;">
+    <div class="form-group">
+      <label for="Searchbar"></label>
+      
+    </div>     
+  </form> -->
+  <!-- <form class="example-form"> -->
+    <!-- <mat-form-field class="example-full-width">
+      <input type="text" placeholder="e.g Silence of the Lambs" id="Searchbar" (keyup)="onEnterPressed()" (keyup.backspace)="onEnterPressed()" [(ngModel)]='searchName'  [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let movie of movies" [value]="movie.title">
+          {{movie.title}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field> -->
+  
+  <div class="form-group">
+    <input [(ngModel)]="searchName" (keyup)="onEnterPressed()" class="form-control" id="Searchbar" placeholder="e.g Silence of the Lambs"/>
+  </div>
+  <section class="example-section">
+    <mat-checkbox class ="example-margin" (change)="onChecking(1)" id="Movie1" >
+          {{categories[1]}}
+    </mat-checkbox>
+    <mat-checkbox class ="example-margin" (change)="onChecking(2)" id="Movie2" >
+        {{categories[2]}}
+    </mat-checkbox>
+    <mat-checkbox class ="example-margin" (change)="onChecking(3)" id="Movie3" >
+      {{categories[3]}}
+    </mat-checkbox>
+    <mat-checkbox class ="example-margin" (change)="onChecking(4)" id="Movie4" >
+      {{categories[4]}}
+    </mat-checkbox>
+    <mat-checkbox class ="example-margin" (change)="onChecking(5)" id="Movie5" >
+      {{categories[5]}}
+    </mat-checkbox>
+    <mat-checkbox class ="example-margin" (change)="onChecking(6)" id="Movie6" >
+      {{categories[6]}}
+    </mat-checkbox>
+  </section>
+<!-- </form> -->
+
+  <!-- <button type="submit" class="btn btn-primary">Submit</button>  -->
+
+
+
+  <!-- <div class="form-check form-check-inline">
+    <input type="checkbox" (change)="onChecking(2)" class="form-check-input" id="Movie2" >
+    <label class="form-check-label" for="Movie2">
+      {{categories[2]}}
+    </label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input type="checkbox" (change)="onChecking(3)" class="form-check-input" id="Movie3" >
+    <label class="form-check-label" for="Movie3">
+      {{categories[3]}}
+    </label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input type="checkbox" (change)="onChecking(4)" class="form-check-input" id="Movie4" >
+    <label class="form-check-label" for="Movie4">
+      {{categories[4]}}
+    </label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input type="checkbox" (change)="onChecking(5)" class="form-check-input" id="Movie5" >
+    <label class="form-check-label" for="Movie5">
+      {{categories[5]}}
+    </label>
+  </div>
+  <div class="form-check form-check-inline">
+    <input type="checkbox" (change)="onChecking(6)" class="form-check-input" id="Movie6" >
+    <label class="form-check-label" for="Movie6">
+      {{categories[6]}}
+    </label> -->

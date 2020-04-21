@@ -1,0 +1,23 @@
+<!-- <contact-form></contact-form> -->
+
+<app-search-form [categories]="post.categories" (changesToSearch)="onSearch($event)" (checkBoxClicked)= "onCheckBoxClicked($event)"></app-search-form>
+
+<app-table-of-contents [categories]="post.categories" [search]="post.search" [boxesClicked]= "post.boxesChecked" [viewMode]="post.viewMode"></app-table-of-contents>
+
+<!-- <app-panel >
+  <ng-container class="heading">Heading</ng-container>
+  <div class="body">
+    <h2>Body</h2>
+    <p>Some content here</p>
+  </div>
+  <div class="footer">This is our footer</div>
+</app-panel> -->
+
+<!-- <app-favorite [isChecked] = "post.isChecked" (change) ="uponCheckingBox($event)"></app-favorite> -->
+
+  <!-- <ng-container class="crimeMovies" >Crime</ng-container> -->
+  <!-- <ng-container class="adventureMovies">Adventure</ng-container>
+  <ng-container class="actionMovies">Action</ng-container>
+  <ng-container class="sci-FiMovies">Sci-Fi</ng-container>
+  <ng-container class="historyMovies">History</ng-container>
+  <ng-container class="animationMovies">Animation</ng-container> -->

@@ -1,0 +1,66 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Rating</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <ng-container [ngSwitch]= "viewMode" >
+        <tbody  *ngSwitchCase= "'full'">
+            <tr  *ngFor="let p of movies ">
+                <td>{{ p.title }}</td>
+                <td>{{ p.year }}</td>
+                <td>{{ p.rating }}</td>
+                <td>{{ categories[p.categoryId] }}</td>
+            </tr>
+        </tbody>
+        <tbody *ngSwitchCase= "'searchBar'">
+                <tr  *ngFor="let p of movies ">
+                    <td [hidden]="!p.title.includes(search)">{{ p.title }}</td>
+                    <td [hidden]="!p.title.includes(search)">{{ p.year }}</td>
+                    <td [hidden]="!p.title.includes(search)">{{ p.rating }}</td>
+                    <td [hidden]="!p.title.includes(search)">{{ categories[p.categoryId] }}</td> 
+            </tr>
+        </tbody>
+        <tbody *ngSwitchCase= "'checkBox'">
+                <tr  *ngFor="let p of movies ">
+                    <td [hidden]="!boxesClicked.includes(p.categoryId)">{{ p.title }}</td>
+                    <td [hidden]="!boxesClicked.includes(p.categoryId)">{{ p.year }}</td>
+                    <td [hidden]="!boxesClicked.includes(p.categoryId)">{{ p.rating }}</td>
+                    <td [hidden]="!boxesClicked.includes(p.categoryId)">{{ categories[p.categoryId] }}</td> 
+            </tr>
+        </tbody>
+    </ng-container>
+</table>
+
+<!-- <td>{{ p.description }}</td> -->
+<!-- <td>{{ p.description }}</td> -->
+
+    <!-- <tbody *ngIf="search.length == 0; else searchBar">
+
+<ng-container [ngSwitch]= "viewMode" >
+    <div *ngSwitchCase= "'full'">FULL</div>
+    <div *ngSwitchCase= "'bothChoices'">BOTH</div>
+    <div *ngSwitchCase= "'searchBar'">SEARCHBAR</div>
+    <div *ngSwitchCase= "'checkBox'">CHECKBOX</div>
+</ng-container> -->
+
+        <!-- <tr *ngFor="let p of movies ">
+            <td>{{ p.title }}</td>
+            <td>{{ p.year }}</td>
+            <td>{{ p.description }}</td>
+            <td>{{ p.rating }}</td>
+            <td>{{ p.categoryId }}</td>
+        </tr>
+    </tbody>
+    <ng-template #searchBar>
+        <tr *ngFor="let p of movies ">
+            <td [hidden]="search != p.title">{{ p.title }}</td>
+            <td [hidden]="search != p.title">{{ p.year }}</td>
+            <td>{{ p.description }}</td> 
+            <td [hidden]="search != p.title">{{ p.rating }}</td>
+            <td [hidden]="search != p.title">{{ p.categoryId }}</td> 
+        </tr> 
+    </ng-template>  -->
